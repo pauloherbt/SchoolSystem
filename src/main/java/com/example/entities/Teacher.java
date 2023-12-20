@@ -1,5 +1,6 @@
 package com.example.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -46,7 +47,7 @@ public class Teacher {
     public String getNumber() {
         return number;
     }
-
+    @JsonIgnore
     public List<Class> getClassList() {
         return classList;
     }

@@ -2,7 +2,9 @@ package com.example.entities;
 
 import jakarta.persistence.*;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_student")
@@ -14,7 +16,6 @@ public class Student {
     private Long register;
     private String number;
     private String password;
-
     @OneToMany(mappedBy = "id.student")
     private Set<StudentClass> classes = new HashSet<>();
 
@@ -76,7 +77,7 @@ public class Student {
     public Long getRegister() {
         return register;
     }
-
+    //@JsonIgnore cancela as turmas
     public Set<StudentClass> getStudentClasses() {
         return classes;
     }

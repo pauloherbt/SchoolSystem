@@ -1,6 +1,7 @@
 package com.example.entities;
 
 import com.example.entities.pk.StudentClassPK;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.Objects;
@@ -38,11 +39,10 @@ public class StudentClass {
     public void setNota(double nota) {
         this.nota = nota;
     }
-
+    @JsonIgnore
     public Student getStudent() {
         return id.getStudent();
     }
-
     public Class getaClass() {
         return id.getaClass();
     }

@@ -1,11 +1,9 @@
 package com.example.entities;
-
-import com.example.entities.pk.StudentClassPK;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -65,6 +63,10 @@ public class Class {
 
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
+    }
+    @JsonIgnore
+    public Set<StudentClass> getStudents() {
+        return students;
     }
 
     @Override

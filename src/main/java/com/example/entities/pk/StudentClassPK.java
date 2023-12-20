@@ -15,7 +15,6 @@ public class StudentClassPK implements Serializable {
     @ManyToOne
     @JoinColumn(name = "class_id")
     private Class aClass;
-
     public Student getStudent() {
         return student;
     }
